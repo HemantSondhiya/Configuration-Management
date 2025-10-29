@@ -51,5 +51,4 @@ With **Spring Cloud Bus + RabbitMQ**, configuration updates can be **broadcast d
 
 ---
 
-## 📦 Project Structure
 
