@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: springbootprofile
+  config:
+    import: "optional:configserver:http://localhost:8888"  # optional: avoids startup failure if server is down
+  profiles:
+    active: prod
+
+
+server:
+  port: 8088
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: refresh
