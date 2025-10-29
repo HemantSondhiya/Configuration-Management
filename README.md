@@ -14,3 +14,42 @@ With **Spring Cloud Bus + RabbitMQ**, configuration updates can be **broadcast d
 
 ## 🧩 Architecture
 
+            ┌────────────────────────┐
+            │   GitHub Repo (Configs)│
+            │ application.yml, etc.  │
+            └──────────┬─────────────┘
+                       │
+                       ▼
+            ┌────────────────────────┐
+            │  Spring Cloud Config   │
+            │        Server          │
+            └──────────┬─────────────┘
+                       │
+                       ▼
+            ┌────────────────────────┐
+            │ Spring Boot Clients    │
+            │ service-a, service-b   │
+            └──────────┬─────────────┘
+                       │
+                       ▼
+            ┌────────────────────────┐
+            │       RabbitMQ         │
+            │ (Spring Cloud Bus)     │
+            └────────────────────────┘
+
+---
+
+## ⚙️ Tech Stack
+
+| Component | Description |
+|------------|-------------|
+| **Spring Boot** | Core framework for building microservices |
+| **Spring Cloud Config Server** | Centralized external configuration management |
+| **Spring Cloud Bus** | Propagates config changes across services |
+| **RabbitMQ** | Message broker for broadcasting refresh events |
+| **GitHub** | Remote configuration repository |
+
+---
+
+## 📦 Project Structure
+
